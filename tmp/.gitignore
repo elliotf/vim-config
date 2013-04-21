@@ -1,0 +1,3 @@
+# vim will store swap files in this directory
+*
+!.gitignore

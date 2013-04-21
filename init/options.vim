@@ -34,7 +34,6 @@ set splitright                  " Add new windows towards the right
 set splitbelow                  " ... and bottom
 set wildmode=list:longest       " Bash-like tab completion
 set scrolloff=3                 " Scroll when the cursor is 3 lines from edge
-set cursorline                  " Highlight current line
 
 " More detailed status line
 set statusline=[%n]\ %f\ %m\ %y
@@ -50,14 +49,13 @@ set laststatus=2                " Always show statusline
 
 set incsearch                   " Incremental search
 set history=1024                " History size
-"set ignorecase                  " Ignore case by default
 set smartcase                   " Smart case-sensitivity when searching (overrides ignorecase)
 
 set autoread                    " No prompt for file changes outside Vim
 
 set swapfile                    " Keep swapfiles
-set directory=~/.vim-tmp,~/tmp,/var/tmp,/tmp
-set backupdir=~/.vim-tmp,~/tmp,/var/tmp,/tmp
+"set directory=~/.vim/tmp,.,~/tmp,/tmp
+"set backupdir=~/.vim/tmp,.,~/tmp,/tmp
 
 set hls                         " search with highlights by default
 " Press Space to turn off highlighting and clear any message already

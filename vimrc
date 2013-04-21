@@ -36,8 +36,7 @@ autocmd BufEnter * :syntax sync fromstart
 colorscheme solarized
 set background=light
 set guifont=Source\ Code\ Pro\ 10
-if has('gui_running')
-else
+if !has('gui_running')
   set t_Co=16
 endif
 
