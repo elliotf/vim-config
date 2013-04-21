@@ -44,3 +44,4 @@ set novisualbell
 set cursorcolumn
 set cursorline
 hi CursorLine cterm=NONE ctermbg=grey
+set foldmethod=syntax
