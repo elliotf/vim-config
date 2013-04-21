@@ -54,8 +54,8 @@ set smartcase                   " Smart case-sensitivity when searching (overrid
 set autoread                    " No prompt for file changes outside Vim
 
 set swapfile                    " Keep swapfiles
-"set directory=~/.vim/tmp,.,~/tmp,/tmp
-"set backupdir=~/.vim/tmp,.,~/tmp,/tmp
+set directory=~/.vim/tmp,.,~/tmp,/tmp
+set backupdir=~/.vim/tmp,.,~/tmp,/tmp
 
 set hls                         " search with highlights by default
 " Press Space to turn off highlighting and clear any message already
