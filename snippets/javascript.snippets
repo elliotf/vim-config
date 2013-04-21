@@ -1,10 +1,16 @@
 # Anonymous Function
 snippet f
 	function(${1}) {${2}}
+
 snippet it
-	it("${1}", function() {
+	it("${1}", function(${2}) {
+		${3}
+	});
+snippet ait
+	it("${1}", function(done) {
 		${2}
 	});
+
 snippet desc
 	describe("${1}", function() {
 		${2}
@@ -13,7 +19,26 @@ snippet con
 	context("${1}", function() {
 		${2}
 	});
+snippet cont
+	context("${1}", function() {
+		${2}
+	});
+
+snippet clog
+	console.log(${1});
+snippet cl
+	console.log("${1}", ${2});
+
 snippet bef
 	beforeEach(function() {
+		${1}
+	});
+snippet aft
+	afterEach(function() {
+		${1}
+	});
+
+snippet frr
+	function(req,res,next) {
 		${1}
 	});

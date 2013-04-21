@@ -31,7 +31,35 @@ filetype plugin indent on
 
 runtime! init/**.vim
 
-
 " Machine-local vim settings - keep this at the end
 " --------------------------
 silent! source ~/.vimrc.local
+
+colorscheme solarized
+set background=light
+set guifont=Source\ Code\ Pro\ 10
+if has('gui_running')
+
+else
+  set t_Co=16
+endif
+
+set cursorcolumn
+set cursorline
+hi CursorLine cterm=NONE ctermbg=grey
+
+set novisualbell
+
+" tab navigation like firefox
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+" split/screen/pane navigation
+nmap <C-j>      <C-w>j<CR>
+nmap <C-k>      <C-w>k<CR>
+nmap <C-h>      <C-w>h<CR>
+nmap <C-l>      <C-w>l<CR>
