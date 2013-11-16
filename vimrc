@@ -35,3 +35,42 @@ runtime! init/**.vim
 " Machine-local vim settings - keep this at the end
 " --------------------------
 silent! source ~/.vimrc.local
+
+
+"set background=dark
+set background=light
+"set mouse-=a
+"let g:solarized_termcolors=16
+if has('gui_running')
+  colorscheme solarized
+  set background=dark
+endif
+
+"let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
+"autocmd FileType javascript nmap <leader>= :call JsBeautify()<CR>
+"set guifont=Monospace
+set guifont=Source\ Code\ Pro\ 9
+
+set cursorcolumn
+set cursorline
+hi CursorLine cterm=NONE ctermbg=grey
+
+"set foldlevel=3
+"set foldnestmax=2
+"augroup vimrc
+"  au BufReadPre * setlocal foldmethod=indent
+"  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+"augroup END
+
+set novisualbell
+"set t_vb=
+
+" tab navigation like firefox
+nnoremap <C-S-tab> :tabprevious<CR>
+nnoremap <C-tab>   :tabnext<CR>
+nnoremap <C-t>     :tabnew<CR>
+inoremap <C-S-tab> <Esc>:tabprevious<CR>i
+inoremap <C-tab>   <Esc>:tabnext<CR>i
+inoremap <C-t>     <Esc>:tabnew<CR>
+
+set fileformat=unix
