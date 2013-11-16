@@ -17,10 +17,12 @@
 " Pathogen (This must happen first.)
 " --------
 
+
 call pathogen#helptags()
 call pathogen#incubate()
 
 set nocompatible
+set rtp+=/usr/lib/go/misc/vim
 filetype plugin indent on
 syntax on                       " Highlight known syntaxes
 
@@ -32,9 +34,9 @@ runtime! init/**.vim
 " --------------------------
 silent! source ~/.vimrc.local
 
-autocmd BufEnter * :syntax sync fromstart
+"autocmd BufEnter * :syntax sync fromstart
 colorscheme solarized
-set background=light
+set background=dark
 set guifont=Source\ Code\ Pro\ 10
 if !has('gui_running')
   set t_Co=16
@@ -43,5 +45,7 @@ endif
 set novisualbell
 set cursorcolumn
 set cursorline
-hi CursorLine cterm=NONE ctermbg=grey
+"hi CursorLine cterm=NONE ctermbg=grey " when using a light bg in console
 set foldmethod=syntax
+
+au BufRead,BufNewFile *.go set filetype=go
