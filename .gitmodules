@@ -44,3 +44,6 @@
 [submodule "openscad"]
 	path = openscad
 	url = https://github.com/sirtaj/vim-openscad.git
+[submodule "stylus"]
+	path = stylus
+	url = https://github.com/wavded/vim-stylus.git
