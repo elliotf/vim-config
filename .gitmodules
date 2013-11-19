@@ -41,9 +41,9 @@
 [submodule "bundle/jade"]
 	path = bundle/jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule "openscad"]
-	path = openscad
+[submodule "bundle/openscad"]
+	path = bundle/openscad
 	url = https://github.com/sirtaj/vim-openscad.git
-[submodule "stylus"]
-	path = stylus
+[submodule "bundle/stylus"]
+	path = bundle/stylus
 	url = https://github.com/wavded/vim-stylus.git
