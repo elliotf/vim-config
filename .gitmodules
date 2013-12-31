@@ -34,7 +34,7 @@
 	url = https://github.com/godlygeek/tabular
 [submodule "bundle/ctrlp.vim"]
 	path = bundle/ctrlp.vim
-	url = git@github.com:kien/ctrlp.vim.git
+	url = http://github.com/kien/ctrlp.vim.git
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
