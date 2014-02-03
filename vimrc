@@ -46,6 +46,10 @@ if has('gui_running')
   set background=dark
 endif
 
+if $COLORTERM == 'gnome-terminal'
+  set t_Co=256
+endif
+
 "let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
 "autocmd FileType javascript nmap <leader>= :call JsBeautify()<CR>
 "set guifont=Monospace
