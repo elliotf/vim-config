@@ -37,14 +37,13 @@ runtime! init/**.vim
 silent! source ~/.vimrc.local
 
 
-set background=dark
-"set background=light
+"set background=dark
+set background=light
 "set mouse-=a
 "let g:solarized_termcolors=16
 if has('gui_running')
   colorscheme solarized
   set background=dark
-  set guifont=Source\ Code\ Pro\ 9
 endif
 
 if $COLORTERM == 'gnome-terminal'
@@ -54,11 +53,11 @@ endif
 "let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
 "autocmd FileType javascript nmap <leader>= :call JsBeautify()<CR>
 "set guifont=Monospace
+set guifont=Source\ Code\ Pro\ 9
 
 set cursorcolumn
 set cursorline
-hi CursorLine cterm=NONE ctermbg=238
-hi CursorColumn cterm=NONE ctermbg=238
+hi CursorLine cterm=NONE ctermbg=grey
 
 "set foldlevel=3
 "set foldnestmax=2
