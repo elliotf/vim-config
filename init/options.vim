@@ -5,7 +5,7 @@ set guioptions-=rL              " Remove scrollbars
 set visualbell                  " Suppress audio/visual error bell
 set notimeout                   " No command timeout
 set showcmd                     " Show typed command prefixes while waiting for operator
-set mouse=a                     " Use mouse support in XTerm/iTerm.
+set "mouse=a                     " Use mouse support in XTerm/iTerm.
 
 set expandtab                   " Use soft tabs
 set tabstop=2                   " Tab settings
