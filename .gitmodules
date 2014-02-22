@@ -47,3 +47,6 @@
 [submodule "bundle/stylus"]
 	path = bundle/stylus
 	url = https://github.com/wavded/vim-stylus.git
+[submodule "bundle/gocode"]
+	path = bundle/gocode
+	url = git@github.com:Blackrush/vim-gocode.git
