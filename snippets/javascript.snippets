@@ -14,13 +14,25 @@ snippet desc
 		${2}
 	});
 snippet cl
-	console.log("${1}", ${2});
+	console.log("${1:}", $1);
 snippet con
+	context("${1}", function() {
+		${2}
+	});
+snippet cont
 	context("${1}", function() {
 		${2}
 	});
 snippet bef
 	beforeEach(function() {
+		${1}
+	});
+snippet aft
+	afterEach(function() {
+		${1}
+	});
+snippet before
+	before(function() {
 		${1}
 	});
 snippet frr
