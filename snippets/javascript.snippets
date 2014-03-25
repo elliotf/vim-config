@@ -1,12 +1,12 @@
 # Anonymous Function
 snippet f
 	function(${1}) {${2}}
-snippet ait
-	it("${1}", function(done) {
+snippet sit
+	it("${1}", function() {
 		${2}
 	});
 snippet it
-	it("${1}", function(${2}) {
+	it("${1}", function(done) {
 		${3}
 	});
 snippet desc
