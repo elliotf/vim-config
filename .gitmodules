@@ -50,3 +50,6 @@
 [submodule "bundle/gocode"]
 	path = bundle/gocode
 	url = git@github.com:Blackrush/vim-gocode.git
+[submodule "bundle/vim-spec"]
+	path = bundle/vim-spec
+	url = https://github.com/geekjuice/vim-spec.git
