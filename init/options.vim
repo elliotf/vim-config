@@ -21,7 +21,7 @@ set wildignore+=public/uploads/**  " ...Also uploads.
 set wildignore+=public/images/**   " ...Also images.
 set wildignore+=vendor/**          " ...Also vendor.
 
-set list                        " Show whitespace
+set list                        " Show whitespace (Tabs appear as ^I)
 if has("gui_running")
   set listchars=trail:·
 else
