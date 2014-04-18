@@ -2,9 +2,7 @@
 
 (Re)move ~/.vim and ~/.vimrc if you have them already, and run:
 
-    git clone https://github.com/elliotf/vim-config.git ~/.vim
-    cd ~/.vim
-    git submodule update --init
+    git clone --recursive https://github.com/elliotf/vim-config.git ~/.vim
     ln -s ~/.vim/vimrc ~/.vimrc
 
 # Updating
