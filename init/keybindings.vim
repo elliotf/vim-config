@@ -27,11 +27,6 @@ nmap <C-j>      <C-w>j<CR>
 nmap <C-k>      <C-w>k<CR>
 nmap <C-l>      <C-w>l<CR>
 
-nmap <C-H>      <C-w>H<CR>
-nmap <C-J>      <C-w>J<CR>
-nmap <C-K>      <C-w>K<CR>
-nmap <C-L>      <C-w>L<CR>
-
 " Open .vimrc file in new tab. Think Command + , [Preferences...] but with Shift.
 "map <D-<>       :tabedit ~/.vimrc<CR>
 
