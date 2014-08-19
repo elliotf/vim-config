@@ -22,9 +22,9 @@ map <leader>v   :vsp<CR>
 "map <leader>=   ^W=
 "map <leader>j   ^Wj
 "map <leader>k   ^Wk
+nmap <C-h>      <C-w>h<CR>
 nmap <C-j>      <C-w>j<CR>
 nmap <C-k>      <C-w>k<CR>
-nmap <C-h>      <C-w>h<CR>
 nmap <C-l>      <C-w>l<CR>
 
 " Open .vimrc file in new tab. Think Command + , [Preferences...] but with Shift.
