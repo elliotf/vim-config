@@ -50,9 +50,6 @@
 [submodule "bundle/gocode"]
 	path = bundle/gocode
 	url = https://github.com/Blackrush/vim-gocode.git
-[submodule "bundle/vim-spec"]
-	path = bundle/vim-spec
-	url = https://github.com/geekjuice/vim-spec.git
 [submodule "bundle/tcomment"]
 	path = bundle/tcomment
 	url = https://github.com/vim-scripts/tComment.git
@@ -74,3 +71,15 @@
 [submodule "bundle/supertab"]
 	path = bundle/supertab
 	url = https://github.com/ervandew/supertab.git
+[submodule "bundle/maktaba"]
+	path = bundle/maktaba
+	url = https://github.com/google/vim-maktaba.git
+[submodule "bundle/codefmt"]
+	path = bundle/codefmt
+	url = https://github.com/google/vim-codefmt.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
+[submodule "bundle/glaive"]
+	path = bundle/glaive
+	url = https://github.com/google/vim-glaive.git

@@ -62,10 +62,10 @@ hi CursorColumn cterm=NONE ctermbg=238
 
 "set foldlevel=3
 "set foldnestmax=2
-"augroup vimrc
-"  au BufReadPre * setlocal foldmethod=indent
-"  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-"augroup END
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
 
 set novisualbell
 "set t_vb=
@@ -79,3 +79,11 @@ inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
 
 set fileformat=unix
+
+set updatetime=250
+
+augroup autoformat_settings
+  "autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
+augroup END
+
+let g:codefmt_clang_format_style = 'Google'
