@@ -83,3 +83,18 @@
 [submodule "bundle/glaive"]
 	path = bundle/glaive
 	url = https://github.com/google/vim-glaive.git
+[submodule "bundle/elm-vim"]
+	path = bundle/elm-vim
+	url = https://github.com/ElmCast/elm-vim.git
+[submodule "bundle/vim/go"]
+	path = bundle/vim/go
+	url = https://github.com/fatih/vim-go.git
+[submodule "bundle/vim-toml"]
+	path = bundle/vim-toml
+	url = https://github.com/cespare/vim-toml.git
+[submodule "bundle/typescript"]
+	path = bundle/typescript
+	url = https://github.com/leafgarland/typescript-vim.git
+[submodule "bundle/vue"]
+	path = bundle/vue
+	url = https://github.com/posva/vim-vue.git

@@ -3,6 +3,10 @@ snippet f
 	function(${1}) {${2}}
 snippet g
 	(${1}) => {${2}}
+snippet ait
+	it('${1}', function(done) {
+		${2}
+	});
 snippet sit
 	it('${1}', function() {
 		${2}
@@ -41,16 +45,6 @@ snippet before
 	before(function() {
 		${1}
 	});
-snippet ene
-	expect(err).to.not.exist();
-snippet ied
-	if(err) {
-	  return done(err);
-	}
-snippet ien
-	if(err) {
-	  return next(err);
-	}
 snippet frr
 	function(req, res, next) {
 		${1}

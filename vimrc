@@ -60,7 +60,6 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=238
 hi CursorColumn cterm=NONE ctermbg=238
 
-"set foldlevel=3
 "set foldnestmax=2
 augroup vimrc
   au BufReadPre * setlocal foldmethod=indent
@@ -77,6 +76,10 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
+map <ESC>[1;5C <C-Right>
+map <ESC>[1;5D <C-Left>
+map! <ESC>[1;5C <C-Right>
+map! <ESC>[1;5D <C-Left>
 
 set fileformat=unix
 
@@ -87,3 +90,15 @@ augroup autoformat_settings
 augroup END
 
 let g:codefmt_clang_format_style = 'Google'
+
+set nolist
+set ignorecase
+let g:ctrlp_max_files = 0
+
+set foldmethod=syntax
+set foldlevel=20
+
+let g:lasttab = 1
+nmap <Leader>t :exe "tabn ".g:lasttab<CR>
+nnoremap ``    :exe "tabn ".g:lasttab<CR>
+au TabLeave * let g:lasttab = tabpagenr()
