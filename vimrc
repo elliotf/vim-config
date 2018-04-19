@@ -60,11 +60,8 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=238
 hi CursorColumn cterm=NONE ctermbg=238
 
-"set foldnestmax=2
-augroup vimrc
-  au BufReadPre * setlocal foldmethod=indent
-  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
-augroup END
+setl foldmethod=syntax
+setl foldlevelstart=100
 
 set novisualbell
 "set t_vb=
@@ -95,8 +92,7 @@ set nolist
 set ignorecase
 let g:ctrlp_max_files = 0
 
-set foldmethod=syntax
-set foldlevel=20
+set diffopt+=vertical
 
 let g:lasttab = 1
 nmap <Leader>t :exe "tabn ".g:lasttab<CR>
