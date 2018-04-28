@@ -91,7 +91,7 @@ let g:codefmt_clang_format_style = 'Google'
 set nolist
 set ignorecase
 let g:ctrlp_max_files = 0
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
+let g:ctrlp_custom_ignore = 'node_modules'
 
 set diffopt+=vertical
 
