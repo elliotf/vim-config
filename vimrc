@@ -60,8 +60,8 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=238
 hi CursorColumn cterm=NONE ctermbg=238
 
-setl foldmethod=syntax
-setl foldlevelstart=100
+set foldmethod=syntax
+set foldlevelstart=100
 
 set novisualbell
 "set t_vb=
