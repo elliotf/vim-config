@@ -42,8 +42,8 @@ set background=dark
 "set mouse-=a
 "let g:solarized_termcolors=16
 if has('gui_running')
-  colorscheme solarized
-  set background=dark
+  "colorscheme solarized
+  "set background=dark
   set guifont=Source\ Code\ Pro\ 9
 endif
 
@@ -51,14 +51,16 @@ if $COLORTERM == 'gnome-terminal'
   set t_Co=256
 endif
 
+colorscheme monokai_lumpy
+
 "let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
 "autocmd FileType javascript nmap <leader>= :call JsBeautify()<CR>
 "set guifont=Monospace
 
 set cursorcolumn
 set cursorline
-hi CursorLine cterm=NONE ctermbg=238
-hi CursorColumn cterm=NONE ctermbg=238
+hi CursorLine cterm=NONE ctermbg=238 ctermfg=lightgrey
+hi CursorColumn cterm=NONE ctermbg=238 ctermfg=lightgrey
 
 set foldmethod=syntax
 set foldlevelstart=100
@@ -99,3 +101,15 @@ let g:lasttab = 1
 nmap <Leader>t :exe "tabn ".g:lasttab<CR>
 nnoremap ``    :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
+
+" use a more readable color for Linter warnings/errors than the default bright
+" orange
+highlight ALEError ctermbg=160 ctermfg=234
+highlight ALEWarning ctermbg=166 ctermfg=234
+let g:ale_echo_msg_format = '%linter% says %s'
+let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_fixers = {
+\   'javascript': [
+\       'eslint',
+\   ],
+\}
