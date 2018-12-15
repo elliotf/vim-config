@@ -34,9 +34,6 @@
 [submodule "bundle/gitgutter"]
 	path = bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
-[submodule "bundle/jade"]
-	path = bundle/jade
-	url = https://github.com/digitaltoad/vim-jade.git
 [submodule "bundle/openscad"]
 	path = bundle/openscad
 	url = https://github.com/sirtaj/vim-openscad.git
@@ -106,3 +103,6 @@
 [submodule "bundle/vim-javascript"]
 	path = bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+[submodule "bundle/vim-pug"]
+	path = bundle/vim-pug
+	url = https://github.com/digitaltoad/vim-pug.git
