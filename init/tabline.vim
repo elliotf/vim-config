@@ -25,8 +25,6 @@ if exists("+showtabline")
                 if file =~ '\/.'
                     let file = substitute(file, '.*\/\ze.', '', '')
                 endif
-            else
-                let file = fnamemodify(file, ':p:t')
             endif
             if file == ''
                 let file = '[No Name]'

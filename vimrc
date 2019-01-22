@@ -59,8 +59,8 @@ colorscheme monokai_lumpy
 
 set cursorcolumn
 set cursorline
-hi CursorLine cterm=NONE ctermbg=238 ctermfg=lightgrey
-hi CursorColumn cterm=NONE ctermbg=238 ctermfg=lightgrey
+hi CursorLine cterm=NONE ctermbg=238
+hi CursorColumn cterm=NONE ctermbg=238
 
 set foldmethod=syntax
 set foldlevelstart=100
@@ -98,6 +98,7 @@ let g:ctrlp_custom_ignore = 'node_modules'
 set diffopt+=vertical
 
 let g:lasttab = 1
+nmap <Leader>f :ALEFix<CR>
 nmap <Leader>t :exe "tabn ".g:lasttab<CR>
 nnoremap ``    :exe "tabn ".g:lasttab<CR>
 au TabLeave * let g:lasttab = tabpagenr()
@@ -107,9 +108,11 @@ au TabLeave * let g:lasttab = tabpagenr()
 highlight ALEError ctermbg=160 ctermfg=234
 highlight ALEWarning ctermbg=166 ctermfg=234
 let g:ale_echo_msg_format = '%linter% says %s'
-let g:ale_linters = {'javascript': ['eslint']}
+let g:ale_linters = {
+\   'javascript': [ 'eslint' ],
+\   'typescript': [ 'eslint' ],
+\}
 let g:ale_fixers = {
-\   'javascript': [
-\       'eslint',
-\   ],
+\   'javascript': [ 'eslint' ],
+\   'typescript': [ 'eslint' ],
 \}
