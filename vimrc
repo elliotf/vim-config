@@ -110,7 +110,7 @@ highlight ALEWarning ctermbg=166 ctermfg=234
 let g:ale_echo_msg_format = '%linter% says %s'
 let g:ale_linters = {
 \   'javascript': [ 'eslint' ],
-\   'typescript': [ 'eslint' ],
+\   'typescript': [ 'eslint', 'tsserver' ],
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],

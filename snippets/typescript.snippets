@@ -46,7 +46,7 @@ snippet before
 		${1}
 	});
 snippet frr
-	function(req, res, next) {
+	function(req : express.Request, res : express.Response, next : Function) : RequestHandler {
 		${1}
 	});
 snippet seq
