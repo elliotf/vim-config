@@ -93,7 +93,9 @@ let g:codefmt_clang_format_style = 'Google'
 set nolist
 set ignorecase
 let g:ctrlp_max_files = 0
-let g:ctrlp_custom_ignore = 'node_modules'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  'node_modules\|dist$',
+  \ }
 
 set diffopt+=vertical
 
@@ -116,3 +118,9 @@ let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
 \   'typescript': [ 'eslint' ],
 \}
+
+let g:gitgutter_max_signs = 2000
+
+" security.  :(
+set modelines=0
+set nomodeline

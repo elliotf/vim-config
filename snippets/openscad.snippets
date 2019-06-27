@@ -10,3 +10,37 @@ snippet mod
 	module ${1}() {
 		${2}
 	}
+snippet cl
+	echo("${1:}: ", $1);
+snippet echo
+	echo("${1:}: ", $1);
+snippet forx
+	for(x=[left,right]) {
+		translate([x*${1},0,0]) {
+		  ${2}
+		}
+	}
+snippet fory
+	for(y=[front,rear]) {
+		translate([0,y*${1},0]) {
+		  ${2}
+		}
+	}
+snippet fory
+	for(y=[front,rear]) {
+		translate([0,y*${1},0]) {
+		  ${2}
+		}
+	}
+snippet forz
+	for(z=[top,bottom]) {
+		translate([0,0,z*${1}]) {
+		  ${2}
+		}
+	}
+snippet forxy
+	for(x=[left,right],y=[front,rear]) {
+		translate([x*(${1}),y*(${1}),0]) {
+			${2}
+		}
+	}

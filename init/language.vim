@@ -12,7 +12,7 @@ endfunction
 autocmd BufWritePre *.m,*.h,*.c,*.mm,*.cpp,*.hpp call StripTrailingWhitespace()
 
 " Ruby, Rails
-autocmd BufWritePre *.rb,*.yml,*.js,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.feature call StripTrailingWhitespace()
+autocmd BufWritePre *.rb,*.yml,*.js,*.ts,*.css,*.less,*.sass,*.scss,*.html,*.xml,*.erb,*.haml,*.feature call StripTrailingWhitespace()
 
 " Java, PHP
 autocmd BufWritePre *.java,*.php call StripTrailingWhitespace()

@@ -4,11 +4,11 @@ snippet f
 snippet g
 	(${1}) => {${2}}
 snippet sit
-	it('${1}', function() {
+	it('${1}', async function() {
 		${2}
 	});
 snippet it
-	it('${1}', function() {
+	it('${1}', async function() {
 		${2}
 	});
 snippet desc
@@ -30,15 +30,15 @@ snippet cont
 snippet ene
 	expect(err).to.not.exist;
 snippet bef
-	beforeEach(function() {
+	beforeEach(async function() {
 		${1}
 	});
 snippet aft
-	afterEach(function() {
+	afterEach(async function() {
 		${1}
 	});
 snippet before
-	before(function() {
+	before(async function() {
 		${1}
 	});
 snippet ene

@@ -8,11 +8,11 @@ snippet ait
 		${2}
 	});
 snippet sit
-	it('${1}', function() {
+	it('${1}', async function() {
 		${2}
 	});
 snippet it
-	it('${1}', function() {
+	it('${1}', async function() {
 		${2}
 	});
 snippet desc
@@ -27,6 +27,9 @@ snippet con
 	context('${1}', function() {
 		${2}
 	});
+snippet called
+	expect(helper.argsOfFake(${1})).to.deep.equal([
+	], '${1} called once');
 snippet cont
 	context('${1}', function() {
 		${2}
@@ -34,15 +37,15 @@ snippet cont
 snippet ene
 	expect(err).to.not.exist;
 snippet bef
-	beforeEach(function() {
+	beforeEach(async function() {
 		${1}
 	});
 snippet aft
-	afterEach(function() {
+	afterEach(async function() {
 		${1}
 	});
 snippet before
-	before(function() {
+	before(async function() {
 		${1}
 	});
 snippet frr
