@@ -18,7 +18,7 @@ autocmd BufWritePre *.rb,*.yml,*.js,*.ts,*.css,*.less,*.sass,*.scss,*.html,*.xml
 autocmd BufWritePre *.java,*.php call StripTrailingWhitespace()
 
 " Misc
-autocmd BufWritePre *.md,*.ts call StripTrailingWhitespace()
+autocmd BufWritePre *.md,*.ts,*.sql call StripTrailingWhitespace()
 
 " Highlight Ruby files
 au BufRead,BufNewFile *.thor set filetype=ruby
