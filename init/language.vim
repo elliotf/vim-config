@@ -40,7 +40,7 @@ autocmd FileType scss set iskeyword=@,48-57,_,-,?,!,192-255
 " Insert ' => '
 autocmd FileType ruby imap  <Space>=><Space>
 
-au BufRead,BufNewFile *.md set filetype=mkd
-au BufRead,BufNewFile *.markdown set filetype=mkd
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.markdown set filetype=markdown
 " Open all folds in Markdown.
-autocmd FileType mkd normal zR
+autocmd FileType markdown normal zR
