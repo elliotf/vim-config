@@ -1,8 +1,7 @@
 " ----------
 " Vim Config
 " ----------
-"
-"
+" "
 " How this works:
 "
 " This file is minimal.  Most of the vim settings and initialization is in
@@ -19,12 +18,11 @@
 
 filetype off                    " Avoid a Vim/Pathogen bug
 call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 
 set nocompatible                " Don't maintain compatibility with vi
 syntax on                       " Highlight known syntaxes
 filetype plugin indent on
-
 
 " Source initialization files
 " ---------------------------
@@ -41,17 +39,13 @@ set background=dark
 "set background=light
 "set mouse-=a
 "let g:solarized_termcolors=16
-if has('gui_running')
   "colorscheme solarized
   "set background=dark
-  set guifont=Source\ Code\ Pro\ 9
-endif
+set guifont=Operator\ Mono
 
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
-
-colorscheme monokai_lumpy
+" if $COLORTERM == 'gnome-terminal'
+"  set t_Co=256
+" endif
 
 "let g:jsbeautify = {'indent_size': 2, 'indent_char': ' '}
 "autocmd FileType javascript nmap <leader>= :call JsBeautify()<CR>
@@ -109,14 +103,20 @@ au TabLeave * let g:lasttab = tabpagenr()
 " orange
 highlight ALEError ctermbg=160 ctermfg=234
 highlight ALEWarning ctermbg=166 ctermfg=234
+let g:ale_linter_aliases = {'jsx': ['css', 'javascript']}
+
 let g:ale_echo_msg_format = '%linter% says %s'
 let g:ale_linters = {
 \   'javascript': [ 'eslint' ],
 \   'typescript': [ 'tslint', 'eslint', 'tsserver' ],
+\   'jsx': ['eslint'],
+\   'javascriptreact': ['eslint'],
 \}
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
 \   'typescript': [ 'tslint', 'eslint' ],
+\   'jsx': ['eslint'],
+\   'javascriptreact': ['eslint'],
 \}
 
 let g:gitgutter_max_signs = 2000
@@ -124,3 +124,61 @@ let g:gitgutter_max_signs = 2000
 " security.  :(
 set modelines=0
 set nomodeline
+
+""""""""""""""""""""
+" larry
+let g:prettier#autoformat = 0
+set relativenumber
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
+command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nmap <leader>d :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" Ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
+cabbrev Ack Ack!
+let g:vim_jsx_pretty_colorful_config = 1
+autocmd BufNewFile,BufRead *.md set syntax=markdown
+
+" make colors work
+if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+
+"For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+"Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+" < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+if (has("termguicolors"))
+  set termguicolors
+endif
+
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
+" choose a color
+syntax enable
+set background=dark
+colorscheme gruvbox
+"colorscheme palenight
+"colorscheme one
+"colorscheme brogrammer
+"colorscheme space-vim-dark
+"colorscheme abbott
+" colorscheme github
+
+" hack for jsx highlighting
+au BufNewFile,BufRead *.jsx setlocal ft=html ft=javascript ft=javascriptreact

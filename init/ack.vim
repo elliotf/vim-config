@@ -9,5 +9,5 @@ function! AckVisual()
   normal gv"xy
   let command = "ack ".@x
   cexpr system(command)
-  cw
+j  cw
 endfunction

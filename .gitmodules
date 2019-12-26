@@ -106,3 +106,12 @@
 [submodule "bundle/vim-pug"]
 	path = bundle/vim-pug
 	url = https://github.com/digitaltoad/vim-pug.git
+[submodule "bundle/vim-jsx-pretty"]
+	path = bundle/vim-jsx-pretty
+	url = git@github.com:MaxMEllon/vim-jsx-pretty.git
+[submodule "bundle/vim-prettier"]
+	path = bundle/vim-prettier
+	url = git@github.com:prettier/vim-prettier.git
+[submodule "bundle/vim-polyglot"]
+	path = bundle/vim-polyglot
+	url = git@github.com:sheerun/vim-polyglot.git

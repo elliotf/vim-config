@@ -4,15 +4,15 @@ snippet f
 snippet g
 	(${1}) => {${2}}
 snippet sit
-	it('${1}', async function() {
+	it('${1}', async () => {
 		${2}
 	});
 snippet it
-	it('${1}', async function() {
+	it('${1}', async () => {
 		${2}
 	});
 snippet desc
-	describe('${1}', function() {
+	describe('${1}', () => {
 		${2}
 	});
 snippet cl
@@ -20,25 +20,45 @@ snippet cl
 snippet co
 	console.log(`${1:}`);
 snippet con
-	context('${1}', function() {
+	context('${1}', () => {
+		${2}
+	});
+snippet sit
+	it('${1}', async () => {
+		${2}
+	});
+snippet it
+	it('${1}', async () => {
+		${2}
+	});
+snippet desc
+	describe('${1}', () => {
+		${2}
+	});
+snippet cl
+	console.log('${1:}', $1);
+snippet co
+	console.log(`${1:}`);
+snippet con
+	context('${1}', () => {
 		${2}
 	});
 snippet cont
-	context('${1}', function() {
+	context('${1}', () => {
 		${2}
 	});
 snippet ene
 	expect(err).to.not.exist;
 snippet bef
-	beforeEach(async function() {
+	beforeEach(async () => {
 		${1}
 	});
 snippet aft
-	afterEach(async function() {
+	afterEach(async () => {
 		${1}
 	});
 snippet before
-	before(async function() {
+	before(async () => {
 		${1}
 	});
 snippet ene
@@ -59,3 +79,9 @@ snippet seq
 	sequelize
 snippet Seq
 	Sequelize
+snippet {
+	{
+		${1:}
+	}
+snippet (
+	(${1:})

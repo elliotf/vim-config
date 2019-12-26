@@ -2,6 +2,7 @@ set guifont=Menlo:h18
 set guioptions-=T               " Remove GUI toolbar
 set guioptions-=e               " Use text tab bar, not GUI
 set guioptions-=rL              " Remove scrollbars
+set guioptions+=c               " make it like the console
 set visualbell                  " Suppress audio/visual error bell
 set notimeout                   " No command timeout
 set showcmd                     " Show typed command prefixes while waiting for operator
@@ -38,13 +39,13 @@ set cursorline                  " Highlight current line
 
 " More detailed status line
 set statusline=[%n]\ %f\ %m\ %y
-set statusline+=%{fugitive#statusline()} " Show git details"
-set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''} " Show RVM details"
-set statusline+=%w              " [Preview]
+"set statusline+=%{fugitive#statusline()} " Show git details"
+"set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''} " Show RVM details"
+"set statusline+=%w              " [Preview]
 set statusline+=%=              " Left/right separator
 set statusline+=%c,             " Cursor column
 set statusline+=%l/%L           " Cursor line/total lines
-set statusline+=\ %P            " Percent through file
+"set statusline+=\ %P            " Percent through file
 
 set laststatus=2                " Always show statusline
 
