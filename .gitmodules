@@ -115,3 +115,6 @@
 [submodule "bundle/vim-polyglot"]
 	path = bundle/vim-polyglot
 	url = git@github.com:sheerun/vim-polyglot.git
+[submodule "bundle/bullets.vim"]
+	path = bundle/bullets.vim
+	url = git@github.com:dkarter/bullets.vim.git

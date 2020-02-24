@@ -53,6 +53,10 @@ snippet bef
 	beforeEach(async () => {
 		${1}
 	});
+snippet boff
+	beforeEach(function(done) {
+		${1}
+	});
 snippet aft
 	afterEach(async () => {
 		${1}
@@ -85,3 +89,14 @@ snippet {
 	}
 snippet (
 	(${1:})
+snippet try
+	try {
+		${1:}
+	}catch(error) {
+	}
+snippet af
+	const ${1:} = () => {
+	}
+snippet maf
+	${1:} = () => {
+	}

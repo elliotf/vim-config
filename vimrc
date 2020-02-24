@@ -35,13 +35,11 @@ runtime! init/**.vim
 silent! source ~/.vimrc.local
 
 
-set background=dark
-"set background=light
 "set mouse-=a
 "let g:solarized_termcolors=16
   "colorscheme solarized
   "set background=dark
-set guifont=Operator\ Mono
+set guifont=Cascadia\ Code 
 
 " if $COLORTERM == 'gnome-terminal'
 "  set t_Co=256
@@ -177,8 +175,19 @@ colorscheme gruvbox
 "colorscheme one
 "colorscheme brogrammer
 "colorscheme space-vim-dark
-"colorscheme abbott
-" colorscheme github
+"colorscheme github
+"colorscheme lucario
+"colorscheme ayu
+"colorscheme OceanicNext
+"colorscheme darkblue
+"colorscheme flattened_dark
+
+"set background=light
+"colorscheme base16-gruvbox-light-hard
+"colorscheme lightning
+"colorscheme flattened_light
 
 " hack for jsx highlighting
 au BufNewFile,BufRead *.jsx setlocal ft=html ft=javascript ft=javascriptreact
+
+let g:github_enterprise_urls = ['https://github.shuttercorp.net']
