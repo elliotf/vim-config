@@ -107,8 +107,10 @@ au TabLeave * let g:lasttab = tabpagenr()
 
 " use a more readable color for Linter warnings/errors than the default bright
 " orange
-highlight ALEError ctermbg=160 ctermfg=234
-highlight ALEWarning ctermbg=166 ctermfg=234
+"highlight ALEError ctermbg=160 ctermfg=234
+"highlight ALEWarning ctermbg=166 ctermfg=234
+highlight ALEError ctermbg=none cterm=underline ctermfg=208
+highlight ALEWarning ctermbg=none cterm=underline ctermfg=208
 let g:ale_echo_msg_format = '%linter% says %s'
 let g:ale_linters = {
 \   'javascript': [ 'eslint' ],
