@@ -47,9 +47,7 @@ if has('gui_running')
   set guifont=Source\ Code\ Pro\ 9
 endif
 
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
+set t_Co=256
 
 colorscheme monokai_lumpy
 
@@ -97,7 +95,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules\|dist$',
   \ }
 
-set diffopt+=vertical
+set diffopt=vertical
 
 let g:lasttab = 1
 nmap <Leader>f :ALEFix<CR>
