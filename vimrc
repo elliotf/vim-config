@@ -47,9 +47,7 @@ if has('gui_running')
   set guifont=Source\ Code\ Pro\ 9
 endif
 
-if $COLORTERM == 'gnome-terminal'
-  set t_Co=256
-endif
+set t_Co=256
 
 colorscheme monokai_lumpy
 
@@ -97,7 +95,7 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  'node_modules\|dist$',
   \ }
 
-set diffopt+=vertical
+set diffopt=vertical
 
 let g:lasttab = 1
 nmap <Leader>f :ALEFix<CR>
@@ -127,16 +125,49 @@ let g:gitgutter_max_signs = 2000
 set modelines=0
 set nomodeline
 
-" The Silver Searcher
-if executable('ag')
+" quickly zoom splits in/out from https://medium.com/@vinodkri/zooming-vim-window-splits-like-a-pro-d7a9317d40
+noremap <Leader>z <c-w>_ \| <c-w>\|
+
+if executable('rg')
+  set grepprg=rg\ --color=never
+  let g:ctrlp_user_command = 'rg %s --files --color=never --glob ""'
+  let g:ctrlp_use_caching = 0
+elseif executable('ag')
   " Use ag over grep
   set grepprg=ag\ --nogroup\ --nocolor  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
   let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'  " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nmap <leader>d :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>" Ack
-if executable('ag')
+
+" adapted from https://www.freecodecamp.org/news/how-to-search-project-wide-vim-ripgrep-ack/ with a fallback to ag for transition
+"ack.vim --- {{{
+
+" Use ripgrep for searching ⚡️
+" Options include:
+" --vimgrep -> Needed to parse the rg response properly for ack.vim
+" --type-not sql -> Avoid huge sql file dumps as it slows down the search
+" --smart-case -> Search case insensitive if all lowercase pattern, Search case sensitively otherwise
+if executable('rg')
+  let g:ackprg = 'rg --vimgrep --type-not sql --smart-case'
+elseif executable('ag')
   let g:ackprg = 'ag --vimgrep'
 endif
-cabbrev Ack Ack!
+
+" Auto close the Quickfix list after pressing '<enter>' on a list item
+"let g:ack_autoclose = 1
+let g:ack_autoclose = 0
+
+" Any empty ack search will search for the work the cursor is on
+let g:ack_use_cword_for_empty_search = 1
+
+" Don't jump to first match
+cnoreabbrev Ack Ack!
+
+" Maps <leader>/ so we're ready to type the search keyword
+"nnoremap <Leader>/ :Ack!<Space>
+"nmap <leader>d :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>" Ack
+" }}}
+
+" Navigate quickfix list with ease
+nnoremap <silent> [q :cprevious<CR>
+nnoremap <silent> ]q :cnext<CR>
