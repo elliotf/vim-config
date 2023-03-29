@@ -3,9 +3,13 @@ set guioptions-=T               " Remove GUI toolbar
 set guioptions-=e               " Use text tab bar, not GUI
 set guioptions-=rL              " Remove scrollbars
 set visualbell                  " Suppress audio/visual error bell
-set notimeout                   " No command timeout
 set showcmd                     " Show typed command prefixes while waiting for operator
 "set mouse=a                     " Use mouse support in XTerm/iTerm.
+
+" following line causes odd behavior when exiting insert mode. When <ESC> is
+" pressed to leave insert mode, the `-- INSERT --` marker does not go away
+" until another key is pressed
+"set notimeout                   " No command timeout
 
 set expandtab                   " Use soft tabs
 set tabstop=2                   " Tab settings
@@ -37,7 +41,7 @@ set scrolloff=3                 " Scroll when the cursor is 3 lines from edge
 set cursorline                  " Highlight current line
 
 " More detailed status line
-set statusline=[%n]\ %f\ %m\ %y
+set statusline=[tab\ %{tabpagenr()}][buf\ %n]\ %f\ %m\ %y
 set statusline+=%{fugitive#statusline()} " Show git details"
 set statusline+=%{exists('g:loaded_rvm')?rvm#statusline():''} " Show RVM details"
 set statusline+=%w              " [Preview]

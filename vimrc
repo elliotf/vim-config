@@ -31,6 +31,27 @@ filetype plugin indent on
 
 runtime! init/**.vim
 
+"runtime! init/ack.vim
+"runtime! init/colorscheme.vim
+"runtime! init/fugitive.vim
+"runtime! init/gundo.vim
+"runtime! init/keybindings.vim
+"runtime! init/language.vim
+"
+"runtime! init/nerd_commenter.vim
+"runtime! init/nerd_tree.vim
+"
+"runtime! init/tabline.vim
+"runtime! init/terminal.vim
+"runtime! init/vim-spec.vim
+"
+"runtime! init/run_tests.vim
+"
+"" offending file that causes ESC to not make INSERT mode go away until another
+"" key is pressed
+"runtime! init/options.vim
+
+
 
 " Machine-local vim settings - keep this at the end
 " --------------------------
@@ -60,7 +81,8 @@ set cursorline
 hi CursorLine cterm=NONE ctermbg=238
 hi CursorColumn cterm=NONE ctermbg=238
 
-set foldmethod=syntax
+"set foldmethod=syntax
+set foldmethod=indent
 set foldlevelstart=100
 
 set novisualbell
@@ -73,10 +95,10 @@ nnoremap <C-t>     :tabnew<CR>
 inoremap <C-S-tab> <Esc>:tabprevious<CR>i
 inoremap <C-tab>   <Esc>:tabnext<CR>i
 inoremap <C-t>     <Esc>:tabnew<CR>
-map <ESC>[1;5C <C-Right>
-map <ESC>[1;5D <C-Left>
-map! <ESC>[1;5C <C-Right>
-map! <ESC>[1;5D <C-Left>
+" map <ESC>[1;5C <C-Right>
+" map <ESC>[1;5D <C-Left>
+" map! <ESC>[1;5C <C-Right>
+" map! <ESC>[1;5D <C-Left>
 
 set fileformat=unix
 
@@ -85,6 +107,12 @@ set updatetime=250
 augroup autoformat_settings
   "autocmd FileType c,cpp,proto,javascript AutoFormatBuffer clang-format
 augroup END
+
+" augroup ft_rb
+"   au!
+"   " fix the SLOOOW syntax highlighting
+"   au FileType ruby setlocal re=1
+" augroup END
 
 let g:codefmt_clang_format_style = 'Google'
 
@@ -110,13 +138,13 @@ au TabLeave * let g:lasttab = tabpagenr()
 highlight ALEError ctermbg=none cterm=underline ctermfg=208
 highlight ALEWarning ctermbg=none cterm=underline ctermfg=208
 let g:ale_echo_msg_format = '%linter% says %s'
+"\   'typescript': [ 'tslint', 'eslint', 'tsserver' ],
 let g:ale_linters = {
 \   'javascript': [ 'eslint' ],
-\   'typescript': [ 'tslint', 'eslint', 'tsserver' ],
 \}
+"\   'typescript': [ 'tslint', 'eslint' ],
 let g:ale_fixers = {
 \   'javascript': [ 'eslint' ],
-\   'typescript': [ 'tslint', 'eslint' ],
 \}
 
 let g:gitgutter_max_signs = 2000
@@ -171,3 +199,40 @@ cnoreabbrev Ack Ack!
 " Navigate quickfix list with ease
 nnoremap <silent> [q :cprevious<CR>
 nnoremap <silent> ]q :cnext<CR>
+
+"  \  'javascript': {
+"  \    'command': 'typescript-language-server --stdio',
+"  \    'log_level': -1,
+"  \    'suppress_stderr': v:true,
+"  \  }
+let g:lsc_server_commands = {
+ \  'ruby': {
+ \    'command': 'solargraph stdio',
+ \    'log_level': -1,
+ \    'suppress_stderr': v:true,
+ \  },
+ \}
+let g:lsc_auto_map = {
+ \  'GoToDefinitionSplit': 'gd',
+ \  'FindReferences': 'gr',
+ \  'Rename': 'gR',
+ \  'ShowHover': 'K',
+ \  'FindCodeActions': 'ga',
+ \}
+" \  'GoToDefinition': 'gd',
+" \  'Completion': 'omnifunc',
+
+"augroup my_lsc
+"  au!
+"  au BufNewFile,BufReadPost *
+"    \  if has_key(g:lsc_servers_by_filetype, &filetype) && lsc#server#filetypeActive(&filetype)
+"    \|     nnoremap <buffer> <C-w>]     :tab LSClientGoToDefinitionSplit<CR>
+"    \|     nnoremap <buffer> <C-w><C-]> :tab LSClientGoToDefinitionSplit<CR>
+"    \| endif
+"augroup end
+
+"let g:lsc_enable_autocomplete  = v:true
+let g:lsc_enable_autocomplete  = v:false
+let g:lsc_enable_diagnostics   = v:false
+let g:lsc_reference_highlights = v:false
+let g:lsc_trace_level          = 'off'

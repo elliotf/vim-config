@@ -112,3 +112,15 @@
 [submodule "bundle/match-up"]
 	path = bundle/match-up
 	url = https://github.com/andymass/vim-matchup.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/fastfold"]
+	path = bundle/fastfold
+	url = https://github.com/Konfekt/FastFold.git
+[submodule "bundle/vim-lsc"]
+	path = bundle/vim-lsc
+	url = https://github.com/natebosch/vim-lsc
+[submodule "rust.vim"]
+	path = rust.vim
+	url = https://github.com/rust-lang/rust.vim.git

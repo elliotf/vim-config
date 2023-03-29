@@ -15,17 +15,17 @@ let maplocalleader = ";"
 "vmap <leader>s  :s/
 
 " Split screen
-map <leader>v   :vsp<CR>
+"map <leader>v   :vsp<CR>
 
 " Move between screens
 "map <leader>w   ^Ww
 "map <leader>=   ^W=
 "map <leader>j   ^Wj
 "map <leader>k   ^Wk
-nmap <C-h>      <C-w>h<CR>
-nmap <C-j>      <C-w>j<CR>
-nmap <C-k>      <C-w>k<CR>
-nmap <C-l>      <C-w>l<CR>
+nmap <C-h>      <C-w>h
+nmap <C-j>      <C-w>j
+nmap <C-k>      <C-w>k
+nmap <C-l>      <C-w>l
 
 " Open .vimrc file in new tab. Think Command + , [Preferences...] but with Shift.
 "map <D-<>       :tabedit ~/.vimrc<CR>
@@ -55,8 +55,8 @@ map \           :NERDTreeToggle<CR>
 map \|          :NERDTreeFind<CR>
 
 " Previous/next quickfix file listings (e.g. search results)
-map <M-D-Down>  :cn<CR>
-map <M-D-Up>    :cp<CR>
+"map <M-D-Down>  :cn<CR>
+"map <M-D-Up>    :cp<CR>
 
 " Previous/next buffers
 map <M-D-Left>  :bp<CR>
@@ -76,7 +76,7 @@ vmap <s-tab> <gv
 "map <D-N> :FufFile **/<CR>
 
 " refresh the FuzzyFinder cache
-map <leader>rf :FufRenewCache<CR>
+"map <leader>rf :FufRenewCache<CR>
 
 " Command-T
 "map <D-N>       :CommandTFlush<CR>:CommandT<CR>
@@ -84,8 +84,8 @@ map <leader>rf :FufRenewCache<CR>
 map <leader>f   :CtrlP<CR>
 
 " ctags with rails load path
-map <leader>rt  :!rails runner 'puts $LOAD_PATH.join(" ")' \| xargs /usr/local/bin/ctags -R public/javascripts<CR>
-map <leader>T   :!rails runner 'puts $LOAD_PATH.join(" ")' \| xargs rdoc -f tags<CR>
+"map <leader>rt  :!rails runner 'puts $LOAD_PATH.join(" ")' \| xargs /usr/local/bin/ctags -R public/javascripts<CR>
+"map <leader>T   :!rails runner 'puts $LOAD_PATH.join(" ")' \| xargs rdoc -f tags<CR>
 
 " Git blame
 map <leader>g   :Gblame<CR>
@@ -96,10 +96,10 @@ map <D-/>       <plug>NERDCommenterToggle
 imap <D-/>      <Esc><plug>NERDCommenterToggle i
 
 " In command-line mode, <C-A> should go to the front of the line, as in bash.
-cmap <C-A> <C-B>
+"cmap <C-A> <C-B>
 
 " Copy current file path to system pasteboard
-map <silent> <D-C> :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
+map <leader>c :let @* = expand("%")<CR>:echo "Copied: ".expand("%")<CR>
 map <leader>C :let @* = expand("%").":".line(".")<CR>:echo "Copied: ".expand("%").":".line(".")<CR>
 
 " Disable middle mouse button, F1
